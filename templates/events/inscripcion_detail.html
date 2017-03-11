@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Detalle de su inscripción </h1>
+<br /> Usted se ha inscrito satisfactoriamente en el evento <strong>{{ object.evento }}</strong>.
+<ul>
+	<li>Código de reserva: {{ object.id }}</li>
+	<li>Nombre y apellidos: {{ object.nombre_apellidos }}</li>
+	<li>Identificación: {{ object.nif }}</li>
+	<li>Fecha de inscripción: {{ object.creado_a }}</li>
+</ul>
+
+
+<div align="center">
+	<p> Guarde esta información </p>
+	<a class="btn btn-success" href="{% url 'events:index' %}"><li class="icon-search"></li> Volver</a>
+</div>
+{% endblock%}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Eventos</h1>
+<br />
+{% for evento in object_list %}
+<h2><a href="{% url 'events:detalle' evento.id %}"><img width="100px" src="media/{{ evento.imagen }}">{{ evento.nombre }}</a></h2>
+	<p> {{ evento.descripcion }}</p>
+     <a class="btn btn-primary" href="{% url 'events:inscribir' evento.id %}"><i class="icon-edit"></i> Inscribir</a>
+		<br />
+	<br />
+{% endfor %}
+{% endblock %}

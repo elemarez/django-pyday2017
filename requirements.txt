@@ -1,0 +1,7 @@
+django
+Werkzeug
+pygraphviz
+django-extensions
+Pillow
+django-localflavor
+django-crispy-forms
