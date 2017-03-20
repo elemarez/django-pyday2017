@@ -23,13 +23,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!depq=$^3xuj_ayi3zjj*ypk16yqe(sb^29r$fg)c=$_k^e$ed'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# README: TOCAR!!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# README: TOCAR!!
+ALLOWED_HOSTS = ['*',]
 
 # Application definition
-
+# README: TOCAR!!
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
-    'localflavor',
+#    'localflavor', Extensión para validaciones en español
     'crispy_forms',
     'events',
 ]
@@ -55,6 +56,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'django_pyday2017.urls'
 
+# README: TOCAR!!
+# Especificar DIRS, APP_DIRS. Los context_processors ahora son propios de cada backend.
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -73,10 +76,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'django_pyday2017.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-
+# README: TOCAR!!
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -87,7 +89,6 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -106,9 +107,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
-
+# README: TOCAR!!
 LANGUAGE_CODE = 'es'
-
+# README: TOCAR!!
 TIME_ZONE = 'Atlantic/Canary'
 
 USE_I18N = True
@@ -120,12 +121,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-
+# README: TOCAR!!
 STATIC_URL = '/static/'
 STATIC_ROOT = 'collected_static'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+# Media files
+# README: TOCAR!!
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'images'

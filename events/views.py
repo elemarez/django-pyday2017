@@ -4,18 +4,21 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Button
 from django.shortcuts import get_object_or_404
 
+
 # Create your views here.
 class IndexView(generic.ListView):
     # template_name = 'events/evento_list.html'
     # context_object_name = 'object_list'
 
     def get_queryset(self):
-        ''' Devuelve los eventos publicados por orden de fecha del evento'''
+        # Devuelve los eventos publicados por orden de fecha del evento
         return Evento.objects.filter(es_publico=True).order_by('-fecha')
+
 
 class DetailView(generic.DetailView):
     model = Evento
-    #template_name = 'events/evento_detail.html'
+    # template_name = 'events/evento_detail.html'
+
 
 class CreateView(generic.CreateView):
     model = Inscripcion

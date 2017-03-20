@@ -17,6 +17,8 @@ from django.conf.urls import include, url, static
 from django.conf import settings as st
 from django.contrib import admin
 
+# README: TOCAR!!
+# Incluir la url de acceso a las aplicaciones
 urlpatterns = [
     url(r'', include('events.urls')),
     url(r'^admin/', admin.site.urls),

@@ -1,7 +1,6 @@
-django
+django < 1.11
 Werkzeug
-pygraphviz
 django-extensions
 Pillow
-django-localflavor
+# django-localflavor  # Validaciones para campos propios del Español
 django-crispy-forms

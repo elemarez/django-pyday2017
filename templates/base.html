@@ -1,53 +1,43 @@
+<!-- Template base preparado con una serie de template tags. Ha de ser extendido en cada plantilla
+     para añadir contenido en los bloques vacíos.
+      Se puede sobreescribir: title, content-->
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>{% block title %} Gestor de Eventos - Python/Django - pyday2017 {% endblock %}</title>
-	{% load staticfiles %}
-	<link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.css" %}">
-	<script src="{% static "js/jquery.js" %}"></script>
-	<script src="{% static "bootstrap/js/bootstrap.js" %}"></script>
-	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-	<style type="text/css">
-		body{
-			padding-top: 60px;
-			padding-bottom: 40px;
-		}
-		.sidebar-nav{
-			padding: 9px 0;
-		}
-	</style>
-	{{ form.media }}
-</head>
-<body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="navbar-inner">
-			<a class="brand" href="{% url 'events:index' %}">Gestor de eventos Django</a>
-		</div>
-	</div>
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<!--<div class="span9">-->
-				<div class="hero-unit">
-					{% autoescape off %}
-					{% block content %}
-					{% endblock%}	
-					{% endautoescape %}
-				</div>
-			<!--</div>-->
-			<!--
-			<div class="span3" align="center">
-				<img src="{% static "images/django.gif" %}"/>
-			</div>
-			-->		
-		</div>
-	</div>
-	<br />
-	<footer>
-		<div align="center">
-			<p>Python/Django pyday 2017</p>
-			<img src="{% static "images/django.gif" %}"/>
-		</div>
-	</footer>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %} Gestor de Eventos - Python/Django - pyday2017 {% endblock %}</title>
+        {% load staticfiles %}
+        <script src='{% static "js/jquery.js" %}'></script>
+        <script src='{% static "bootstrap/js/bootstrap.js" %}'></script>
+        <link rel="stylesheet" href='{% static "bootstrap/css/bootstrap.css" %}'>
+        <link rel="stylesheet" href='{% static "base.css" %}'>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+        {{ form.media }}
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <a class="brand" href="{% url 'events:index' %}">Gestor de eventos Django</a>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="hero-unit">
+                    {% autoescape off %}
+                    {% block content %}
+                    {% endblock %}
+                    {% endautoescape %}
+                </div>
+            </div>
+        </div>
+        <br />
+        <footer>
+            {% block footer %}
+            <div align="center">
+                <p>Python/Django pyday 2017</p>
+                <img src='{% static "images/django.gif" %}'/>
+            </div>
+            {% endblock %}
+        </footer>
+    </body>
 </html>
