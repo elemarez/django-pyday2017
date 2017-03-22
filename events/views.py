@@ -1,4 +1,5 @@
 from django.views import generic
+from .forms import InscripcionCreateForm
 from .models import Evento, Inscripcion
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Button
@@ -21,8 +22,8 @@ class DetailView(generic.DetailView):
 
 
 class CreateView(generic.CreateView):
-    model = Inscripcion
-    fields = ['nombre_apellidos', 'nif']
+    form_class = InscripcionCreateForm
+    template_name = 'events/inscripcion_form.html'
 
     def get_context_data(self, **kwargs):
         context = super(CreateView, self).get_context_data(**kwargs)

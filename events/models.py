@@ -55,5 +55,5 @@ class Inscripcion(models.Model):
         # Clave conjunta
         unique_together = (("nif", "evento"),)
 
-#    def get_absolute_url(self):
-#        return reverse('events:inscripcion_detalle', kwargs={'pk': self.pk})
+    def get_absolute_url(self):
+        return reverse('events:inscripcion_detalle', kwargs={'pk': self.pk})
